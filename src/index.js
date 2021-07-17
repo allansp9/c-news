@@ -9,8 +9,8 @@ import App from "./App";
 ReactDOM.render(
   <BrowserRouter>
     <Auth0Provider
-      domain="c-news.us.auth0.com"
-      clientId="0YCf9pZsYfA3MhzZ1IzBYehjlN1mzXfl"
+      domain="c-news-prod.us.auth0.com"
+      clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
       redirectUri={window.location.origin}
     >
       <App />
