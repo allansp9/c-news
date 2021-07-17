@@ -1,13 +1,111 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Lato", sans-serif;
+  src: local("Lato"), url(./assets/Lato-Regular.ttf) format("truetype");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Open Sans", sans-serif;
+  src: local("Open Sans"), url(./assets/OpenSans-Regular.ttf) format("truetype");
+}
+
+@layer utilities {
+  .min-width {
+    min-width: 320px;
+  }
+
+  .text-tag {
+    font-size: 0.625rem;
+    @apply uppercase font-lato pb-1;
+  }
+
+  .btn-base {
+    height: 52px;
+    width: 242px;
+    @apply bg-tech uppercase font-lato text-base text-white;
+  }
+
+  .img-container {
+    position: relative;
+  }
+
+  .img-overlay-btn {
+    width: 151px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .img-overlay-btn-small {
+    width: 110px;
+    height: 35px;
+    @apply text-sm;
+  }
+
+  .interest-base {
+    width: 97px;
+    @apply h-7 rounded-full font-lato text-sm uppercase text-white flex items-center justify-center;
+  }
+
+  .politics-unchecked {
+    @apply text-politics border border-politics;
+  }
+
+  .politics-checked {
+    @apply bg-politics text-white;
+  }
+
+  .business-unchecked {
+    @apply text-business border border-business;
+  }
+
+  .business-checked {
+    @apply bg-business text-white;
+  }
+
+  .tech-unchecked {
+    @apply text-tech border border-tech;
+  }
+
+  .tech-checked {
+    @apply bg-tech text-white;
+  }
+
+  .science-unchecked {
+    @apply text-science border border-science;
+  }
+
+  .science-checked {
+    @apply bg-science text-white;
+  }
+
+  .sports-unchecked {
+    @apply text-sports border border-sports;
+  }
+
+  .sports-checked {
+    @apply bg-sports text-white;
+  }
+
+  .tech {
+    @apply text-tech;
+  }
+
+  .politics {
+    @apply text-politics;
+  }
+
+  .business {
+    @apply text-business;
+  }
+
+  .science {
+    @apply text-science;
+  }
+
+  .sports {
+    @apply text-sports;
+  }
 }

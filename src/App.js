@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+
+import { InterestsContextProvider } from "./contexts/interestsContext";
+
+import Home from "./pages/Home";
+import UserArea from "./pages/UserArea";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App pt-14 min-width">
+      <InterestsContextProvider>
+        <Switch>
+          <Route path="/user-area">
+            <UserArea />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </InterestsContextProvider>
     </div>
   );
 }
